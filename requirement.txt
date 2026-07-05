@@ -1,3 +1,4 @@
 streamlit
-bz2
-pickle
+requests
+scikit-learn
+pandas
