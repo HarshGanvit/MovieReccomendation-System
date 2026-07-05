@@ -13,7 +13,7 @@ with open('df.pkl','rb') as f:
     df = pickle.load(f)
 @st.cache_data
 def get_similarity_matrix(dataframe):
-    tfidf = TfidfVectorizer( stop_words='english')
+    tfidf = TfidfVectorizer(max_features=5000, stop_words='english')
     vectorized_data = tfidf.fit_transform(dataframe['tags']).toarray()
     return cosine_similarity(vectorized_data)
 
